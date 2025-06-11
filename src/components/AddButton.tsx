@@ -16,7 +16,8 @@ type Props = {
 export default function AddButton({
   code,
   setCode,
-  product,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  product, // 'product' is defined but never used. エラーを回避するための修正
   setProduct,
   cart,
   setCart,
