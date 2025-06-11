@@ -1,27 +1,8 @@
-'use client'
-
-import { useState } from 'react'
-import CameraInput from '../components/CameraInput'
-import ProductInfo from '../components/ProductInfo'
-import AddButton from '../components/AddButton'
-import PurchaseList from '../components/PurchaseList'
-import PurchaseButton from '../components/PurchaseButton'
-import { Product, CartItem } from '../types'
-
-export default function HomePage() {
-  const [code, setCode] = useState('')
-  const [product, setProduct] = useState<Product | null>(null)
-  const [cart, setCart] = useState<CartItem[]>([])
-
+export default function Home() {
   return (
-    <main className="flex flex-col items-center p-4 space-y-4 max-w-md mx-auto">
-      <h1 className="text-xl font-bold mb-2">モバイルPOSアプリ</h1>
-
-      <CameraInput code={code} setCode={setCode} />
-      <ProductInfo product={product} />
-      <AddButton code={code} setCode={setCode} product={product} setProduct={setProduct} cart={cart} setCart={setCart} />
-      <PurchaseList cart={cart} />
-      <PurchaseButton cart={cart} setCart={setCart} />
+    <main style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+      <h1>デプロイ成功！</h1>
+      <p>このページが表示されていれば、Next.js アプリの基本構成は正常です。</p>
     </main>
   )
 }
