@@ -40,7 +40,7 @@ jobs:
       - name: Log in to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          creds: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
       - name: Zip artifact for deployment
         run: zip release.zip ./deploy -r #3
