@@ -66,7 +66,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'app-step4-29'
+          app-name: 'app-step4-30'
           slot-name: 'Production'
           package: ./deploy #3
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
