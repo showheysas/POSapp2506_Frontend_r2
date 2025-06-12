@@ -37,11 +37,6 @@ jobs:
           cp -r ./.next/standalone/. ./deploy
           cp -r ./.next/static/. ./deploy/.next/static
 
-      - name: Log in to Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-
       - name: Zip artifact for deployment
         run: zip release.zip ./deploy -r #3
 
@@ -74,4 +69,4 @@ jobs:
           app-name: 'app-002-step3-2-node-oshima4'
           slot-name: 'Production'
           package: ./deploy #3
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_99ABF267AF584A228BBD85979B8B6E33 }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
