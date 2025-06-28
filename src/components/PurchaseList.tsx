@@ -26,7 +26,7 @@ export default function PurchaseList({ cart }: Props) {
         </thead>
         <tbody>
           {cart.map((item) => (
-            <tr key={item.code}>
+            <tr key={item.code} className="bg-white dark:bg-gray-100">
               <td className="py-1 px-2 border border-black">{item.name}</td>
               <td className="py-1 px-2 border border-black">{item.price}円</td>
               <td className="py-1 px-2 border border-black">{item.quantity}</td>

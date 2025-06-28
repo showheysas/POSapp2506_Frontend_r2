@@ -78,13 +78,13 @@ export default function PurchaseButton({ cart, setCart }: Props) {
             zIndex: 9999,
           }}
         >
-          <div className="bg-white rounded-2xl shadow-lg p-6 w-11/12 max-w-sm text-center">
+          <div className="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl shadow-lg p-6 w-11/12 max-w-sm text-center">
             <h2 className="text-lg font-semibold mb-4">購入が完了しました</h2>
             <p className="text-lg">合計（税込）：<span className="font-bold">{totalAmount.toLocaleString()}円</span></p>
             <p className="text-sm mb-6">税抜金額：<span className="font-bold">{totalAmountExTax.toLocaleString()}円</span></p>
             <button
               onClick={() => setShowPopup(false)}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition"
+              className="bg-blue-500 hover:bg-blue-600 text-white dark:text-white px-4 py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
               OK
             </button>
