@@ -51,6 +51,16 @@ const CameraInput = forwardRef<CameraInputHandle, Props>(
           const selectedDeviceId = devices[0]?.deviceId
           if (!selectedDeviceId) return
 
+          // ★ ここで一度 getUserMedia を呼び出して許可ポップアップを表示させる
+          await navigator.mediaDevices.getUserMedia({
+            video: {
+              deviceId: selectedDeviceId,
+              facingMode: 'environment',
+              width: { ideal: 1280 },
+              height: { ideal: 720 },
+            }
+          })
+
           const controls = await codeReader.decodeFromConstraints(
             {
               video: {
