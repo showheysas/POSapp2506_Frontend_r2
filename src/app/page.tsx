@@ -1,5 +1,4 @@
 'use client'
-
 import { useRef, useState } from 'react'
 import CameraInput, { CameraInputHandle } from '../components/CameraInput'
 import AddButton from '../components/AddButton'
@@ -12,7 +11,6 @@ export default function HomePage() {
   const [product, setProduct] = useState<Product | null>(null)
   const [cart, setCart] = useState<CartItem[]>([])
   const [showCamera, setShowCamera] = useState(false)
-
   const cameraRef = useRef<CameraInputHandle>(null)
 
   const boxStyle = (hasValue: boolean) =>
@@ -28,18 +26,17 @@ export default function HomePage() {
     setShowCamera(false)
   }
 
+  const handleStartScan = () => {
+    setShowCamera(true)
+  }
+
   return (
     <main className="flex flex-col items-center p-4 space-y-3 max-w-md mx-auto">
       <h1 className="text-xl font-bold">モバイルPOSアプリ</h1>
-
+      
       {/* スキャン開始ボタン */}
       <button
-        onClick={() => {
-          setShowCamera(true)
-          setTimeout(() => {
-            cameraRef.current?.startScan()  // ユーザー操作の延長で呼び出し
-          }, 0)
-        }}
+        onClick={handleStartScan}
         className="w-full bg-green-200 border border-green-500 text-green-800 font-bold py-2 px-4 rounded"
       >
         スキャン（カメラ）
