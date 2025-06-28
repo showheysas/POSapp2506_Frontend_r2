@@ -34,7 +34,12 @@ export default function HomePage() {
 
       {/* スキャン開始ボタン */}
       <button
-        onClick={() => setShowCamera(true)}
+        onClick={() => {
+          setShowCamera(true)
+          setTimeout(() => {
+            cameraRef.current?.startScan()  // ユーザー操作の延長で呼び出し
+          }, 0)
+        }}
         className="w-full bg-green-200 border border-green-500 text-green-800 font-bold py-2 px-4 rounded"
       >
         スキャン（カメラ）
